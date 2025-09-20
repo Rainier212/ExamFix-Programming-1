@@ -19,8 +19,8 @@ public class Employee{
         unpaidHours = 0.0;
     }
     
-    public string setfullname(String fullname){
-        fullname = new fullname;
+    public void setfullname(String fullname){
+        this.fullname = fullname;
     }
     
     public String getfullname(){
