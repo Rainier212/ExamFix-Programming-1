@@ -10,13 +10,11 @@ public class Employee{
     private boolean onLeave;
     private double hourlyWage;
     private double unpaidHours;
-    private int hoursWorked;
 
     public Employee(String fullname, int yearOfBirth, double hourlyWage){
         this.fullname = fullname;
         this.yearOfBirth = yearOfBirth;
         this.hourlyWage = hourlyWage;
-        this.hoursWorked = 0;
         onLeave = false;
         unpaidHours = 0.0;
     }
@@ -54,9 +52,8 @@ public class Employee{
      * Returns the net pay for the outstanding unpaid hours
      */
     private double calculatePay(){
-        int hours = hoursWorked;
         double taxes = 0.3;
-        double salary = hourlyWage * (hours + unpaidHours);
+        double salary = hourlyWage * unpaidHours;
         double totalPay = salary - (salary * taxes);
         return totalPay;
     }
@@ -70,7 +67,7 @@ public class Employee{
      */
     public void paySalary(){
         double payment = calculatePay();
-        System.out.println(fullname + " has received a wire transfer of" + payment + "CAD");
+        System.out.println(fullname + " has received a wire transfer of" + payment + " CAD");
         setUnpaidHours(0.0);
     }
 }
