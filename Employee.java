@@ -10,11 +10,13 @@ public class Employee{
     private boolean onLeave;
     private double hourlyWage;
     private double unpaidHours;
+    private int hoursWorked;
 
     public Employee(String fullname, int yearOfBirth, double hourlyWage){
         this.fullname = fullname;
         this.yearOfBirth = yearOfBirth;
         this.hourlyWage = hourlyWage;
+        this.hoursWorked = 0;
         onLeave = false;
         unpaidHours = 0.0;
     }
@@ -54,9 +56,9 @@ public class Employee{
     private double calculatePay(){
         int hours = hoursWorked;
         double taxes = 0.3;
-        salary = hourlyWage * (hours + unpaidHours);
-        totalPay = salary - (salary * taxes);
-        return(calculatePay);
+        double salary = hourlyWage * (hours + unpaidHours);
+        double totalPay = salary - (salary * taxes);
+        return totalPay;
     }
     
     public void setUnpaidHours(double hours){
