@@ -52,10 +52,10 @@ public class Employee{
      * Returns the net pay for the outstanding unpaid hours
      */
     private double calculatePay(){
-        int hours = hoursWorked();
-        double taxes = taxes(0.3);
+        int hours = hoursWorked;
+        double taxes = 0.3;
         salary = hourlyWage * (hours + unpaidHours);
-        calculatePay = salary - (salary * taxes);
+        totalPay = salary - (salary * taxes);
         return(calculatePay);
     }
     
