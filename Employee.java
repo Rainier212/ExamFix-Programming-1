@@ -58,6 +58,10 @@ public class Employee{
         calculatePay = salary - (salary * taxes);
         return(calculatePay);
     }
+    
+    public void setUnpaidHours(double hours){
+        this.unpaidHours = hours;
+    }
 
     /*
      * Output the payment record and resets unpaid hours
@@ -65,6 +69,6 @@ public class Employee{
     public void paySalary(){
         double payment = calculatePay();
         System.out.println(fullname + " has received a wire transfer of" + payment + "CAD");
-        setunpaidHours(0.0);
+        setUnpaidHours(0.0);
     }
 }
